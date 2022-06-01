@@ -31,6 +31,22 @@ class Color:
         return (splitcomplement0_rgb, splitcomplement1_rgb)
 
 
+    def generate_analogus(self, hsv):
+        h = hsv[0] * 360
+        h0 = h + 30
+        h1 = h - 30
+        analogus0 = (h0/360, hsv[1], hsv[2])
+        analogus1 = (h1/360, hsv[1], hsv[2])
+
+        analogus0_rgb = colorsys.hsv_to_rgb(analogus0[0], analogus0[1], analogus0[2])
+        analogus0_rgb = (analogus0_rgb[0]*255, analogus0_rgb[1]*255, analogus0_rgb[2]*255)
+
+        analogus1_rgb = colorsys.hsv_to_rgb(analogus1[0], analogus1[1], analogus1[2])
+        analogus1_rgb = (analogus1_rgb[0]*255, analogus1_rgb[1]*255, analogus1_rgb[2]*255)
+
+        return (analogus0_rgb, analogus1_rgb)
+
+
     def generate_complementary(self, hsv):
         h = hsv[0] * 360
         h += 180

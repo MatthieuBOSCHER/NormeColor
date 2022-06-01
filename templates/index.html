@@ -14,7 +14,7 @@
             align-content: center;
             align-items: center;
             text-align: center;
-                        height: 100%;
+            height: 100%;
 
             /*justify-content: center;*/
         }
@@ -27,34 +27,57 @@
         }
         .complement {
             background-color: {{complement}};
-            width: 25%;
+            width: 17%;
             height: 100%;
             text-align: center;
-        justify-content: center;
+            justify-content: center;
         }
         .splitA {
             background-color: {{splitA}};
-            width: 25%;
+            width: 17%;
             height: 100%;
             text-align: center;
-        justify-content: center;
+            justify-content: center;
         }
         .splitB {
             background-color: {{splitB}};
-            width: 25%;
+            width: 17%;
+            height: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+        .analogusA {
+            background-color: {{analogusA}};
+            width: 17%;
+            height: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+        .analogusB {
+            background-color: {{analogusB}};
+            width: 17%;
             height: 100%;
             text-align: center;
             justify-content: center;
         }
         .input{
             background-color: {{input_color}};
-            width: 25%;
+            width: 17%;
             height: 100%;
             text-align: center;
             justify-content: center;
+            margin-bottom: auto;
+            margin-top: auto;
+        position: relative;
         }
         #colopicker {
-            justify-content: center;
+            vertical-align: baseline;
+            margin-bottom: auto;
+            margin-top: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
     </style>
@@ -68,6 +91,8 @@
         <div class="complement">{{complement}}</div>
         <div class="splitA">{{splitA}}</div>
         <div class="splitB">{{splitB}}</div>
+        <div class="analogusA">{{analogusA}}</div>
+        <div class="analogusB">{{analogusB}}</div>
         <div class="input">
             {{input_color}}
             <div id="colopicker">
