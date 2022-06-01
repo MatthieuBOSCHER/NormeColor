@@ -59,14 +59,7 @@ def create_color(rgb):
     return Color(rgb[0], rgb[1], rgb[2])
 
 
-red = Color(64, 208, 61)
 
-split_complementary = red.generate_split_complementary(red.hsv)
-splitA = create_color(split_complementary[0])
-splitB = create_color(split_complementary[1])
-# splitA.print_rgb_color()
-# splitB.print_rgb_color()
-complement = create_color(red.generate_complementary(red.hsv))
 # complement.print_rgb_color()
 
 
