@@ -14,21 +14,21 @@ class Color:
         return '#'+'%02x%02x%02x' % (int(self.r), int(self.g) , int(self.b))
 
 
-    def generate_split_complementary(self, hsv):
+    def generate_triadic(self, hsv):
         h = hsv[0] * 360
         h += 180
-        h0 = h + 30
-        h1 = h - 30
-        splitcomplement0 = (h0/360, hsv[1], hsv[2])
-        splitcomplement1 = (h1/360, hsv[1], hsv[2])
+        h0 = h + 60
+        h1 = h - 60
+        triadic0 = (h0/360, hsv[1], hsv[2])
+        triadic1 = (h1/360, hsv[1], hsv[2])
 
-        splitcomplement0_rgb = colorsys.hsv_to_rgb(splitcomplement0[0], splitcomplement0[1], splitcomplement0[2])
-        splitcomplement0_rgb = (splitcomplement0_rgb[0]*255, splitcomplement0_rgb[1]*255, splitcomplement0_rgb[2]*255)
+        triadic0_rgb = colorsys.hsv_to_rgb(triadic0[0], triadic0[1], triadic0[2])
+        triadic0_rgb = (triadic0_rgb[0]*255, triadic0_rgb[1]*255, triadic0_rgb[2]*255)
 
-        splitcomplement1_rgb = colorsys.hsv_to_rgb(splitcomplement1[0], splitcomplement1[1], splitcomplement1[2])
-        splitcomplement1_rgb = (splitcomplement1_rgb[0]*255, splitcomplement1_rgb[1]*255, splitcomplement1_rgb[2]*255)
+        triadic1_rgb = colorsys.hsv_to_rgb(triadic1[0], triadic1[1], triadic1[2])
+        triadic1_rgb = (triadic1_rgb[0]*255, triadic1_rgb[1]*255, triadic1_rgb[2]*255)
 
-        return (splitcomplement0_rgb, splitcomplement1_rgb)
+        return (triadic0_rgb, triadic1_rgb)
 
 
     def generate_analogus(self, hsv):
@@ -73,12 +73,3 @@ class Color:
 
 def create_color(rgb):
     return Color(rgb[0], rgb[1], rgb[2])
-
-
-
-# complement.print_rgb_color()
-
-
-# print(complement.get_rgb_value())
-# print(complement.get_hexvalue())
-

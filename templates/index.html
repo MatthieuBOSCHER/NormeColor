@@ -9,15 +9,15 @@
             padding: 0px;
             height: 100vh;
         }
-        dev {
-            display: flex;
-            align-content: center;
-            align-items: center;
-            text-align: center;
-            height: 100%;
+        /*dev {*/
+        /*    display: flex;*/
+        /*    align-content: center;*/
+        /*    align-items: center;*/
+        /*    text-align: center;*/
+        /*    height: 100%;*/
 
-            /*justify-content: center;*/
-        }
+        /*    !*justify-content: center;*!*/
+        /*}*/
         #parentDiv {
             display: flex;
             flex-direction: row;
@@ -32,15 +32,15 @@
             text-align: center;
             justify-content: center;
         }
-        .splitA {
-            background-color: {{splitA}};
+        .triadicA {
+            background-color: {{triadicA}};
             width: 17%;
             height: 100%;
             text-align: center;
             justify-content: center;
         }
-        .splitB {
-            background-color: {{splitB}};
+        .triadicB {
+            background-color: {{triadicB}};
             width: 17%;
             height: 100%;
             text-align: center;
@@ -68,7 +68,7 @@
             justify-content: center;
             margin-bottom: auto;
             margin-top: auto;
-        position: relative;
+            position: relative;
         }
         #colopicker {
             vertical-align: baseline;
@@ -79,7 +79,13 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
+        .text{
+            margin-top: 50px;
+            color: white;
+            mix-blend-mode: difference;
+            font-size: 3em;
+            font-weight: bolder;
+        }
     </style>
 </head>
 <body>
@@ -88,18 +94,18 @@
 </div>
     <div id="parentDiv">
 
-        <div class="complement">{{complement}}</div>
-        <div class="splitA">{{splitA}}</div>
-        <div class="splitB">{{splitB}}</div>
-        <div class="analogusA">{{analogusA}}</div>
-        <div class="analogusB">{{analogusB}}</div>
+        <div class="complement"><p class="text">{{complement}}</p></div>
+        <div class="triadicA"><p class="text">{{triadicA}}</p></div>
+        <div class="triadicB"><p class="text">{{triadicB}}</p></div>
+        <div class="analogusA"><p class="text">{{analogusA}}</p></div>
+        <div class="analogusB"><p class="text">{{analogusB}}</p></div>
         <div class="input">
-            {{input_color}}
+            <p class="text">{{input_color}}</p>
             <div id="colopicker">
                 {{ colorpicker.loader() }}
                 {{ colorpicker.picker(ids=[".color"]) }}
 
-                <form action="/color" method="post">
+                <form action="/" method="post">
                     <input name="hex" class='color' value='Enter your color in hex' />
                     <input type="submit" value="Submit">
                 </form>
